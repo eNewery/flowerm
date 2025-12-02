@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>melputa</title>
+<style>
+    body {
+        background: #fdf7e3;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+
+    .container {
+        position: relative;
+        width: 200px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    /* Maceta */
+    .pot {
+        width: 140px;
+        height: 80px;
+        background: #c67a2c;
+        position: absolute;
+        bottom: 0;
+        border-radius: 10px 10px 20px 20px;
+        box-shadow: inset 0 10px 0 rgba(0,0,0,0.15);
+    }
+
+    /* Tallo */
+    .stem {
+        width: 10px;
+        height: 0px;
+        background: #2e8b57;
+        position: absolute;
+        bottom: 75px;
+        border-radius: 5px;
+        animation: growStem 3s ease forwards;
+        transform-origin: bottom center;
+
+    }
+
+    @keyframes growStem {
+        to {
+            height: 130px;
+        }
+    }
+
+    /* PÉTALOS CENTRADOS */
+    .petal {
+        width: 45px;
+        height: 45px;
+        background: #ff6eb4;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: scale(0);
+        animation: bloom 0.9s ease forwards;
+        animation-delay: 2s;
+    }
+
+    /* Posiciones con transform combinado */
+    .p1 { animation-name: bloomP1; }
+    .p2 { animation-name: bloomP2; }
+    .p3 { animation-name: bloomP3; }
+    .p4 { animation-name: bloomP4; }
+    .p5 { animation-name: bloomP5; }
+    .p6 { animation-name: bloomP6; }
+
+
+    @keyframes bloomP1 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(-50%, calc(-50% - 39px)) scale(1); }
+    }
+
+    @keyframes bloomP2 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(calc(-50% - 30px), calc(-50% - 25px)) scale(1); }
+    }
+
+    @keyframes bloomP3 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(calc(-50% + 30px), calc(-50% - 25px)) scale(1); }
+    }
+
+    @keyframes bloomP4 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(calc(-50% - 30px), calc(-50% + 15px)) scale(1); }
+    }
+
+    @keyframes bloomP5 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(calc(-50% + 30px), calc(-50% + 15px)) scale(1); }
+    }
+        @keyframes bloomP6 {
+        from { transform: translate(-50%, -50%) scale(0); }
+        to { transform: translate(calc(-50% + 0px), calc(-50% + 30px)) scale(1); }
+    }
+
+
+    /* Centro */
+    .center {
+        width: 38px;
+        height: 38px;
+        background: #ffd700;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        animation: appearCenter 1s ease forwards;
+        animation-delay: 2s;
+    }
+
+.title{
+position: absolute;
+top: 0;
+z-index: 100;
+animation:titleAppear 1s both;
+color: #F4A7B9;
+animation-delay:3s;
+}
+
+@keyframes titleAppear {
+    0%{opacity: 0;}
+    100%{
+        opacity: 1;
+    }
+}
+
+    @keyframes appearCenter {
+        to {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+</style>
+</head>
+<body>
+    <h1 class="title">puta :3 </h1>
+
+<div class="container">
+    <div class="stem"></div>
+
+    <!-- PÉTALOS CENTRADOS -->
+    <div class="petal p1"></div>
+    <div class="petal p2"></div>
+    <div class="petal p3"></div>
+    <div class="petal p4"></div>
+    <div class="petal p5"></div>
+    <div class="petal p6"></div>
+
+
+    <div class="center"></div>
+
+    <div class="pot"></div>
+</div>
+
+</body>
+</html>
